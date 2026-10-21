@@ -8,15 +8,12 @@
   },
   "description": "AWS Lamdba layer to provide PDFKit",
   "scripts": {
-    "prebuild": "rimraf -r build/ && mkdir -p build/nodejs",
+    "prebuild": "rm -rf build/ && mkdir -p build/nodejs",
     "build": "docker build -t pdfkit-aws-lambda-layer . && CID=$(docker create pdfkit-aws-lambda-layer:latest) && docker cp ${CID}:/usr/local/pdfkit/node_modules/ build/nodejs/ && docker rm ${CID}",
     "prerelease": "npm run build",
     "release": "sls deploy"
   },
   "dependencies": {
     "pdfkit": "0.20.2"
-  },
-  "devDependencies": {
-    "rimraf": "^3.0.2"
   }
 }
