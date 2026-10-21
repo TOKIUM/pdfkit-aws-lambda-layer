@@ -1,4 +1,8 @@
 # PDFKit AWS Lambda Layer
+
+> [!NOTE]
+> このリポジトリはメンテナンスを終了し、アーカイブする予定です。Serverless Framework を外したため、`npm run release` は使えません。
+
 Build and publish an AWS Lambda Layer which provides PDFKit.
 
 ## Requirements
